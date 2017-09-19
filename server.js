@@ -3,6 +3,8 @@ const hbs=require('hbs');
 const fs=require('fs');
 var app=express();
 
+const port=process.env.PORT || 3000;
+
 app.get('/',(request,response)=>{
     response.render('home.hbs',{
         pageTitle:"Home",
@@ -33,6 +35,6 @@ app.get('/about',(request,response)=>{
     });
 });
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is running on port 3000");
 });
