@@ -12,6 +12,13 @@ app.get('/',(request,response)=>{
     })
 });
 
+app.get('/project',(request,response)=>{
+    response.render('project.hbs',{
+        pageTitle:"project",
+        welocmeMessage:"Welocme to server"
+    })
+});
+
 app.use((req,res,next)=>{
     var now=new Date().toString();
     var log=`${now} ${req.method} ${req.url}`;
